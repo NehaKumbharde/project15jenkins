@@ -1,3 +1,8 @@
-FROM httpd
-COPY index.html /usr/local/apache2/htdocs/
-EXPOSE 80
+FROM python
+RUN pip install flask
+WORKDIR /src
+COPY . .
+EXPOSE 4000
+CMD python server.py
+
+
